@@ -1,7 +1,20 @@
 {
-  "18224123": true,
+  "nim_anda": "18224123",
   "bonus": {
-    "migrasi_protokol_saat_runtime": false,
-    "kompatibilitas": false
+    "migrasi_protokol_runtime": {
+      "diimplementasikan": false
+    },
+    "kompatibilitas": {
+      "diimplementasikan": false
+    },
+    "adapter_runtime": {
+      "diimplementasikan": false
+    },
+    "integrasi_lanjutan": {
+      "diimplementasikan": false
+    },
+    "hiura's_bonus": {
+      "diimplementasikan": false
+    }
   }
 }

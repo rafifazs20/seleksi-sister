@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  gateway:
+    build: ./src/gateway
+    ports:
+      - "8080:8080"
+    networks:
+      - babel-network
+    depends_on:
+      - service-a
+      - service-b
+      - service-c
+
+  service-a:
+    image: babel-go-service-a:local
+    ports:
+      - "8101:8101"
+    networks:
+      - babel-network
+
+  service-b:
+    image: babel-go-service-b:local
+    ports:
+      - "8201:8201"
+    networks:
+      - babel-network
+
+  service-c:
+    image: babel-go-service-c:local
+    ports:
+      - "8301:8301/udp"
+    networks:
+      - babel-network
+
+  control-plane:
+    image: babel-go-control-plane:local
+    ports:
+      - "8090:8090"
+    networks:
+      - babel-network
+
+networks:
+  babel-network:
+    driver: bridge
